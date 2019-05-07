@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class StringHandlerFacade {
 	static Scanner in;
 	static Lexer lex;
+	static Parser p;
 	static LinkedList<Token> tokens = new LinkedList<>();
 
 	public static void EvaluateOneString() {
@@ -17,6 +18,8 @@ public class StringHandlerFacade {
 				next = lex.GetNextToken();
 			}
 		}
+		p = new Parser(tokens);
+		System.out.println(p.Parse().Value());
 	}
 	
 	/*public String ListTokens() {
@@ -36,6 +39,6 @@ public class StringHandlerFacade {
 	public static void main(String[] args) {
 		EvaluateOneString();
 		ListTokens();
-		System.out.println(tokens.size());
+		//System.out.println(tokens.size());
 	}
 }

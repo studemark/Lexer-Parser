@@ -100,7 +100,6 @@ public class Lexer {
 						inputString = inputString.substring(1);
 						curChar = inputString.charAt(0);
 					}
-					inputString = inputString.substring(1);
 					return new Token(Token.TokenType.DOUBLE, doubleToken.toString(), Double.valueOf(doubleToken.toString()));
 				}
 		}
